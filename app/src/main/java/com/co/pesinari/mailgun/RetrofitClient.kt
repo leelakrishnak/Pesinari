@@ -14,12 +14,11 @@ class RetrofitClient private constructor() {
         get() = client.create(Api::class.java)
 
     companion object {
-        var BASE_URL =
+        private var BASE_URL =
             BuildConfig.MAILGUN_BASE_URL
         private const val API_USERNAME = "api"
 
-        //you need to change the value to your API key
-        var API_PASSWORD = BuildConfig.MAILGUN_API_KEY
+        private var API_PASSWORD = BuildConfig.MAILGUN_API_KEY
 
         private val AUTH = "Basic " + Base64.encodeToString(
             ("$API_USERNAME:$API_PASSWORD").toByteArray(),

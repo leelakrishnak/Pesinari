@@ -40,8 +40,6 @@ class SMSReceiver : BroadcastReceiver() {
         Log.d(TAG, "A SMS is received")
         // for long text , need to iterate
         for (message in smsMessages) {
-            Toast.makeText(context, "Message from ${message.displayOriginatingAddress} : body ${message.messageBody}", Toast.LENGTH_SHORT)
-                .show()
             messageBuilder.append(message.messageBody)
             messageSubject = message.displayOriginatingAddress
             Log.d(TAG, "SMS body ${message.messageBody}")
